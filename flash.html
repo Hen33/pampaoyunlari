@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Game Player</title>
+    <!-- Bu kısımda gerekli CSS dosyalarını ve ikon kütüphanesini ekleyebilirsiniz -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Modern Game Player</h1>
+    </header>
+    
+    <main>
+        <section id="game-container">
+            <!-- Oyunlar burada görüntülenecek -->
+        </section>
+        
+        <section id="game-list">
+            <h2>Oyun Listesi</h2>
+            <ul>
+                <a href="https://temple-of-boom.github.io/file/"></i> Temple of Boom</a>
+                <li><a href="#" onclick="loadGame('game2.html')"><i class="fas fa-gamepad"></i> Oyun 2</a></li>
+                <!-- Gerekirse daha fazla oyun eklenebilir -->
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Modern Game Player</p>
+    </footer>
+
+    <script>
+        function loadGame(gameFile) {
+            // Önceki oyunu temizle
+            document.getElementById('game-container').innerHTML = '';
+            
+            // Yeni oyunu iframe ile yükle
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', gameFile);
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '400');
+            iframe.setAttribute('frameborder', '0');
+            
+            // Oyun container'ına iframe'i ekle
+            document.getElementById('game-container').appendChild(iframe);
+        }
+    </script>
+</body>
+</html>
